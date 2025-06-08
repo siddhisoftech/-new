@@ -1534,7 +1534,7 @@
 																 data-status="init">
 															 <div style="display: none;">
 																	<input type="hidden" name="access_key"
-																		value="b2f08229-51ae-4120-a8c0-5faf8fa15ec5">
+																		value="7bc80450-c323-448e-80fd-5b06054f6a88">
 																</div>
 
 														<div
@@ -1598,7 +1598,8 @@
 																</div>
 															</div>
 														</div>
-													 
+													   <input type="hidden" name="redirect" value="https://siddhisoftech.github.io/-new/thanks.html">  
+
 													 </form>
 												</div>
 											</div>
@@ -3031,13 +3032,24 @@
 			speed: 100,
 			controls: true,
 			pager: false,
-			//touchEnabled: true,
+			touchEnabled: true,
 			adaptiveHeight: true
 		});
+		$('.swipe-slider a').on('click', function(e) {
+       e.preventDefault(); // <-- This will stop links from working
+        });
+
 
 		
 	</script>
 	<style>
+		.swipe-slider a {
+       position: relative;
+      z-index: 10;
+      }
+		.swipe-slider a {
+		pointer-events: auto;
+		} 
 		.bx-wrapper .bx-controls-direction a {
 			position: absolute;
 			top: 44% !important;
