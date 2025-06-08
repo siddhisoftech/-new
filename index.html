@@ -1060,8 +1060,7 @@
 
 
 					<ul class="swipe-slider">
-						<li>
-							<a href="pharma.html">Go to Pharma</a>
+						<li> 
 							<div class="slide-posts">
 								<div class="post">
 									<a  href="pharma.html">
@@ -1528,9 +1527,8 @@
 														<p role="status" aria-live="polite" aria-atomic="true"></p>
 														<ul></ul>
 													</div>
-													<form id="custom-ajax-form" method="post"
-														class="wpcf7-form init" aria-label="Contact form"
-														novalidate="novalidate" data-status="init"> 
+													<form id="custom-ajax-form" method="post" action="contact.php" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+
 														<div
 															class="qodef-m-two-cols qodef-grid qodef-layout--columns qodef-col-num--2 qodef-responsive--custom qodef-col-num--1440--2 qodef-col-num--1366--2 qodef-col-num--1024--2 qodef-col-num--768--1 qodef-col-num--680--1 qodef-col-num--480--1">
 															<div class="qodef-grid-inner">
@@ -3059,8 +3057,8 @@
 }
 	</style>
 <script>
-jQuery(document).ready(function ($) {
-    $('#custom-ajax-form').on('submit', function (e) {
+ /*jQuery(document).ready(function ($) {
+   $('#custom-ajax-form').on('submit', function (e) {
         e.preventDefault();
 
         const formData = {
@@ -3082,6 +3080,31 @@ jQuery(document).ready(function ($) {
                 alert('Error sending form. Try again later.');
             }
         });
+    });
+});*/
+</script>
+<script>
+document.getElementById('custom-ajax-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    let formData = new FormData(this);
+	console.log(formData);
+
+    fetch('contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if(data.trim() === "success") {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Error sending form. Please try again.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("There was a problem with the form submission.");
     });
 });
 </script>
