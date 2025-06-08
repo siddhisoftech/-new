@@ -3054,7 +3054,13 @@
 }
 .client .bx-viewport {
     padding: 4px;
+}.qodef-e-media-image a,
+.qodef-e-title a,
+.qodef-e-read-more a {
+  position: relative;
+  z-index: 2;
 }
+
 	</style>
 <script>
  /*jQuery(document).ready(function ($) {
@@ -3082,10 +3088,13 @@
         });
     });
 });*/
+$('.post a').on('click', function () {
+  window.location.href = 'https://example.com';
+});
 </script>
 <script>
 document.getElementById('custom-ajax-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+    //e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData(this);
 	console.log(formData);
