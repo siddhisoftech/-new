@@ -3091,35 +3091,9 @@
 			   });
 		   });
 	   });*/
-		$('.post a').on('click', function () {
-			window.location.href = 'https://example.com';
-		});
+	 
 	</script>
-	<script>
-		document.getElementById('custom-ajax-form').addEventListener('submit', function (e) {
-			//e.preventDefault(); // Prevent default form submission
-
-			let formData = new FormData(this);
-			console.log(formData);
-
-			fetch('contact.php', {
-				method: 'POST',
-				body: formData
-			})
-				.then(response => response.text())
-				.then(data => {
-					if (data.trim() === "success") {
-						alert("Form submitted successfully!");
-					} else {
-						alert("Error sending form. Please try again.");
-					}
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					alert("There was a problem with the form submission.");
-				});
-		});
-	</script>
+ 
 </body>
 
 </html>
